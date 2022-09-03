@@ -1,0 +1,15 @@
+{
+ "nnodes": 5,
+ "noise var": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "int sparse": 5,
+ "dag": "outstar",
+ "nsamples": 1,
+ "nints": 5,
+ "nwarmups": 0
+}

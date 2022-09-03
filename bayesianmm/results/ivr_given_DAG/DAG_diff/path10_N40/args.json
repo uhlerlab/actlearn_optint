@@ -1,0 +1,20 @@
+{
+ "nnodes": 10,
+ "noise var": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "int sparse": 5,
+ "dag": "path",
+ "nsamples": 40,
+ "nints": 10,
+ "nwarmups": 0
+}
