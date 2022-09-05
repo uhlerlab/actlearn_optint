@@ -6,3 +6,5 @@ __pycache__/
 *.txt
 *.pdf
 *.png
+*.DS_Store
+*.egg-info/
