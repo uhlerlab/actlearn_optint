@@ -44,3 +44,8 @@ Pointers for nonillustrative figures:
 - `./perturb-CITE-seq/preprocess/process_data.ipynb`: Fig. S9
 - `./perturb-CITE-seq/preprocess/test_linearity.ipynb`: Fig. S11C
 - `./perturb-CITE-seq/test.ipynb`: Fig. 6, S12-15
+
+**References**
+
+[1] CJ Frangieh, et al., Multimodal pooled Perturb-CITE-seq screens in patient models define mechanisms of cancer immune446
+evasion. Nat. Genet. 53, 332–341 (2021)
