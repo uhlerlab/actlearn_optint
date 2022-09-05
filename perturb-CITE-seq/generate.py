@@ -8,10 +8,10 @@ from copy import deepcopy
 
 
 NNODES = 36
-PATHDAG = "./data/graphs/dags/estimated_dag.pkl"
-PATHSAMPLES = "./data/data+.pkl"
+PATHDAG = "./data/estimated_dag.pkl"
+PATHSAMPLES = "./data/data+.pkl" ######
 
-class mean_match(object):
+class instance(object):
 
 	def __init__(self, combination=False, seed=1234, target=None):
 		print(PATHDAG)
@@ -85,9 +85,6 @@ class mean_match(object):
 			batch = all_batch[:, idx]
 		return batch
 	
-	def update_pool(self, min_sample_size):
-		pass
-
 	def reduce_pool(self, a):
 		ind = 0
 		size = len(self.a_pool)
