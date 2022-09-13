@@ -2,7 +2,7 @@
 
 Code for paper: _Active learning for optimal intervention design in causal models_
 
-arXiv link: coming soon...
+arXiv link: https://arxiv.org/abs/2209.04744
 
 ## Installation
 Download code and run in command line:
