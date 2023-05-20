@@ -8,12 +8,17 @@ from argparse import Namespace
 from xml.etree.ElementInclude import default_loader
 import numpy as np
 from tqdm import tqdm
+import timeit
 
 from optint.data import synthetic_instance, gen_dag
 from optint.test import test_passive, test_active
 
 
 def run(problem, opts):
+
+	if opts.time:
+		start = timeit.default_timer()
+
 	test = {
 		True: test_active,
 		False: test_passive 
@@ -28,7 +33,12 @@ def run(problem, opts):
 		Actions.append(action)
 		Probs.append(prob)
 
-	return Actions, Probs
+	if opts.time:
+		stop = timeit.default_timer()
+		return Actions, Probs, stop - start
+
+	else:
+		return Actions, Probs
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()

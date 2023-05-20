@@ -8,3 +8,7 @@ __pycache__/
 *.png
 *.DS_Store
 *.egg-info/
+**/tmp/
+**/figures/
+**/perturb-CITE-seq/data/
+**/perturb-CITE-seq/preprocess/data/

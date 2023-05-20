@@ -10,7 +10,7 @@ from .dag import *
 # creating an object for the causal system and the target state
 class synthetic_instance(object):
 
-	def __init__(self, nnodes, DAG_type, sigma_square, a_size, a_target_nodes=None, std=False, prefix_DAG=None, seed=1234):
+	def __init__(self, nnodes, DAG_type, sigma_square, a_size, std, a_target_nodes=None, prefix_DAG=None, seed=1234):
 		np.random.seed(seed)
 
 		self.nnodes = nnodes

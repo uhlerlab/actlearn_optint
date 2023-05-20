@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-def plot_mean(problem, opts, R, best=False, **kwargs):
+def plot_mean(problem, opts, R, best=False, miscolor=False, **kwargs):
 	plt.clf()
 
 	fig, axs = plt.subplots(1,1, figsize=(5.4,3.7))
@@ -31,12 +31,22 @@ def plot_mean(problem, opts, R, best=False, **kwargs):
 					mse[-1] = min(mse)
 			MSEs[k].append(mse)
 
-	if len(exps) == 6:
+	if len(exps) == 7:
+		colors = ['#069AF3', '#9ACD32', 'black', 'grey', 'orange', '#C79FEF', 'coral']
+		markers = ['s', 'o', 'o', 'o', '^', '^', '^']		
+	elif len(exps) == 6:
 		colors = ['#069AF3', '#9ACD32', 'black', 'grey', 'orange', '#C79FEF'] 
 		markers = ['s', 'o', 'o', 'o', '^', '^']
 	elif len(exps) == 3:
-		colors = ['#069AF3', '#9ACD32', 'orange']
-		markers = ['s', 'o', '^']
+		if miscolor:
+			colors = ['#069AF3', 'orange', 'coral']
+			markers = ['s', '^', '^']
+		else:
+			colors = ['#069AF3', '#9ACD32', 'orange']
+			markers = ['s', 'o', '^']
+	elif len(exps) == 4:
+		colors = ['#069AF3', '#9ACD32', 'orange', 'red']
+		markers = ['s', 'o', '^', '^']		
 	for i,k in enumerate(exps):
 		axs.plot(
 			range(opts.T),

@@ -42,7 +42,10 @@ def test_active(problem, opts):
 		'civ': civ_acq, 
 		'greedy': greedy_acq,
 		'maxv': maxv_acq,
-		'cv': cv_acq
+		'cv': cv_acq,
+		'mi': mi_acq,
+		'ei': ei_acq,
+		'ucb': ucb_acq
 	}.get(opts.acq, None)
 	assert acq is not None, "Unsupported functions!"
 
@@ -59,10 +62,12 @@ def test_active(problem, opts):
 		else:	
 			acquisition = acq(sigma_square, mean, var, problem.mu_target, opts.n)
 		
+
 		try:
 			# try two initial points
 			a_jitter = a.reshape(-1)*np.random.uniform(0.8,1.2,(problem.nnodes,))
-			x01 = np.maximum(np.minimum(a_jitter, 1), -1)			
+			x01 = np.maximum(np.minimum(a_jitter, 1), -1)
+
 			x02 = problem.mu_target - np.matmul(mean, problem.mu_target)
 			x02 = x02 / np.linalg.norm(x02)
 
@@ -91,6 +96,9 @@ def test_active(problem, opts):
 
 		batch = problem.sample(a, opts.n)
 		model.update_posterior(a, batch)
+
+		if opts.acq == 'ei':
+			acquisition.obj_min = min(acquisition.obj_min, np.linalg.norm(np.average(batch, axis=1)-problem.mu_target)**2)
 
 		A.append(a)
 		Prob.append(model.prob_padded())

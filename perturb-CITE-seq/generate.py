@@ -8,12 +8,23 @@ from copy import deepcopy
 
 
 NNODES = 36
-PATHDAG = "./data/estimated_dag.pkl"
 PATHSAMPLES = "./data/data+.pkl" ######
 
 class instance(object):
 
-	def __init__(self, combination=False, seed=1234, target=None):
+	def __init__(self, combination=False, seed=1234, target=None, miscase=None):
+		if miscase == 'fullyconnected':
+			PATHDAG = "./data/estimated_fully_connected_dag.pkl"
+		elif miscase == 'reverse':
+			PATHDAG = "./data/estimated_reverse_dag.pkl" 
+		elif miscase == 'random':
+			PATHDAG = "./data/random_dag.pkl"
+		elif miscase == 'randomfullyconnected':
+			PATHDAG = "./data/random_fully_connected_dag.pkl" 
+		elif miscase == 'reversefullyconnected':
+			PATHDAG = "./data/reverse_fully_connected_dag.pkl"
+		else:
+			PATHDAG = "./data/estimated_dag.pkl"
 		print(PATHDAG)
 		print(PATHSAMPLES)
 
