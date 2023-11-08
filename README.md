@@ -1,8 +1,8 @@
 # Active Learning for Optimal Interventions
 
-Code for paper: _Active learning for optimal intervention design in causal models_
+Code for paper: _Active learning for optimal intervention design in causal models (Nature Machine Intelligence, 2023)_
 
-arXiv link: https://arxiv.org/abs/2209.04744 (will be updated soon)
+arXiv link: https://arxiv.org/abs/2209.04744
 
 ## Installation
 Follow the two steps illustrated below
